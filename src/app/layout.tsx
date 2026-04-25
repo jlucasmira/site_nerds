@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     "universidade",
     "open source",
   ],
+  icons: {
+    icon: "/assets/brand/Nerds.png",
+    apple: "/assets/brand/Nerds.png",
+  },
   openGraph: {
     title: "NERDS Portal",
     description:

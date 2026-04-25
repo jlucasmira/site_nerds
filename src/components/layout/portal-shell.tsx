@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
+import { Footer } from "@/components/layout/footer";
 import { SideNav } from "@/components/layout/side-nav";
 import { TopBar } from "@/components/layout/top-bar";
 import { usePortalStore } from "@/store/portal-store";
@@ -31,7 +32,7 @@ export function PortalShell({ children }: PortalShellProps) {
   }, [theme]);
 
   return (
-    <div className="min-h-screen flex overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <SideNav />
       <TopBar />
 
@@ -49,6 +50,7 @@ export function PortalShell({ children }: PortalShellProps) {
       <main id="main-content" className="flex-1 md:ml-64 pt-24 px-4 md:px-8 pb-16">
         {children}
       </main>
+      <Footer />
       <Toaster position="bottom-right" />
       <SubmitRepositoryModal />
     </div>
