@@ -15,7 +15,7 @@ export default function CodePage() {
   return (
     <PortalShell>
       <section className="max-w-5xl mx-auto space-y-6">
-        <h1 className="text-4xl font-bold">Code Repository</h1>
+        <h1 className="text-2xl md:text-4xl font-bold">Code Repository</h1>
         <p className="text-slate-400">
           Open source, colaboração e transferência tecnológica em um catálogo único.
         </p>

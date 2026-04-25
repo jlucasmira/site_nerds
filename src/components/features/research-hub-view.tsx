@@ -12,7 +12,7 @@ export function ResearchHubView() {
   return (
     <div className="max-w-[1600px] mx-auto space-y-12">
       <section>
-        <h1 className="text-5xl font-extrabold text-white mb-2">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-2">
           Research <span className="text-gradient">Hub</span>
         </h1>
         <p className="text-slate-400 max-w-2xl">
@@ -28,7 +28,7 @@ export function ResearchHubView() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold border-b border-white/10 pb-2">
+        <h2 className="text-2xl md:text-3xl font-bold border-b border-white/10 pb-2">
           Active Projects
         </h2>
         {projects.length === 0 ? (

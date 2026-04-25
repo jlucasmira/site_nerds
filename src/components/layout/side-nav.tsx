@@ -26,15 +26,15 @@ export function SideNav({ mobile = false }: SideNavProps) {
       className={`${mobile ? "w-full" : "hidden w-64 md:flex"} bg-slate-950/80 text-cyan-500 border-r border-cyan-500/20 h-full flex-col pt-16`}
       aria-label="Navegação principal"
     >
-      <div className="px-6 pb-6 border-b border-white/5 mb-4">
+      <div className="px-4 md:px-6 pb-6 border-b border-white/5 mb-4">
         <Link href="/" className="block">
           <Image
             src="/assets/brand/Nerds.png"
             alt="NERDS Portal"
-            width={140}
-            height={40}
+            width={120}
+            height={34}
             priority
-            className="drop-shadow-[0_0_8px_rgba(0,241,254,0.4)]"
+            className="w-auto h-8 md:h-10 drop-shadow-[0_0_8px_rgba(0,241,254,0.4)]"
           />
         </Link>
         <p className="text-slate-400 text-xs uppercase tracking-wider mt-2">

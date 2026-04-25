@@ -11,10 +11,10 @@ export function Footer() {
           <Image
             src="/assets/brand/Nerds.png"
             alt="NERDS"
-            width={100}
-            height={28}
+            width={80}
+            height={22}
             priority
-            className="drop-shadow-[0_0_6px_rgba(0,241,254,0.3)]"
+            className="w-auto h-6 md:h-7 drop-shadow-[0_0_6px_rgba(0,241,254,0.3)]"
           />
         </div>
         <div className="text-slate-500 text-sm text-center md:text-right">

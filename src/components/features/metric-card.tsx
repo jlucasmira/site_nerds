@@ -20,7 +20,7 @@ export function MetricCard({ metric }: MetricCardProps) {
         {metric.label}
       </h3>
       <div className="flex items-baseline gap-2">
-        <span className="text-4xl font-bold text-white">{metric.value}</span>
+        <span className="text-2xl md:text-4xl font-bold text-white">{metric.value}</span>
         {metric.trend ? (
           <span className="text-cyan-300 text-sm">{metric.trend}</span>
         ) : null}

@@ -45,8 +45,8 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
           <span className="material-symbols-outlined text-sm">arrow_back</span>
           Voltar para membros
         </Link>
-        <article className="glass-panel rounded-xl p-6 space-y-4">
-          <div className="flex items-center gap-4">
+        <article className="glass-panel rounded-xl p-4 md:p-6 space-y-4">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <Image
               src={member.avatar}
               alt={`Foto de perfil de ${member.name}`}
@@ -55,10 +55,10 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
               sizes="88px"
               placeholder="blur"
               blurDataURL={blurDataURL}
-              className="rounded-full border border-white/20"
+              className="rounded-full border border-white/20 w-20 h-20 sm:w-22 sm:h-22"
             />
-            <div>
-              <h1 className="text-3xl font-bold">{member.name}</h1>
+            <div className="text-center sm:text-left">
+              <h1 className="text-2xl md:text-3xl font-bold">{member.name}</h1>
               <p className="text-cyan-300">{member.role}</p>
             </div>
           </div>

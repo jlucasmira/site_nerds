@@ -92,6 +92,13 @@ a {
   );
 }
 
+.glass-button {
+  background: rgb(39 42 44 / 30%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(0 241 254 / 15%);
+}
+
 .text-gradient {
   background: linear-gradient(to right, #4b8eff, #00dbe7);
   -webkit-background-clip: text;

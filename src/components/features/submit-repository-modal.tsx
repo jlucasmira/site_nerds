@@ -81,7 +81,7 @@ export function SubmitRepositoryModal() {
       aria-modal="true"
       aria-label="Submit Repository"
     >
-      <div className="glass-panel rounded-xl w-full max-w-xl p-6 border border-cyan-500/20">
+      <div className="glass-panel rounded-xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-4 md:p-6 border border-cyan-500/20">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-white text-xl font-semibold">Submit Repository</h2>
           <button

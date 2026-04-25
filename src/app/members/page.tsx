@@ -25,7 +25,7 @@ export default async function MembersPage() {
   return (
     <PortalShell>
       <section className="max-w-5xl mx-auto space-y-6">
-        <h1 className="text-4xl font-bold">Member Profiles</h1>
+        <h1 className="text-2xl md:text-4xl font-bold">Member Profiles</h1>
         <p className="text-slate-400">
           Conheça o time de pesquisa por trás dos projetos e publicações.
         </p>

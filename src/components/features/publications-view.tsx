@@ -25,7 +25,7 @@ export function PublicationsView() {
 
   return (
     <section className="max-w-5xl mx-auto space-y-6">
-      <h1 className="text-4xl font-bold">Publications</h1>
+      <h1 className="text-2xl md:text-4xl font-bold">Publications</h1>
       <p className="text-slate-400">
         Autoridade acadêmica do grupo em IA, visão computacional e sistemas
         inteligentes.
@@ -33,7 +33,7 @@ export function PublicationsView() {
       <input
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        className="w-full md:w-96 rounded-full bg-slate-900/70 border border-white/10 px-4 py-2"
+        className="w-full rounded-full bg-slate-900/70 border border-white/10 px-4 py-2"
         placeholder="Filtrar publicações por título, venue ou palavra-chave"
       />
       <div className="space-y-4">
