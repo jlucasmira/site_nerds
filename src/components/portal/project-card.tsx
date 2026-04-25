@@ -37,7 +37,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="flex justify-between items-center pt-4 border-t border-white/5">
         <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-slate-400 text-sm">
+          <span
+            className="material-symbols-outlined text-slate-400 text-sm"
+            aria-hidden="true"
+          >
             groups
           </span>
           <span className="text-sm text-slate-400">
@@ -48,10 +51,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           href={project.repoUrl}
           target="_blank"
           rel="noreferrer"
+          aria-label={`Abrir repositório do projeto ${project.title}`}
           className="text-cyan-400 text-sm font-semibold hover:text-cyan-300 flex items-center gap-1"
         >
           View Repository{" "}
-          <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          <span className="material-symbols-outlined text-sm" aria-hidden="true">
+            arrow_forward
+          </span>
         </a>
       </div>
     </motion.article>

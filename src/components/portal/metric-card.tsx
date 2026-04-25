@@ -13,6 +13,7 @@ export function MetricCard({ metric }: MetricCardProps) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
+      aria-label={`Métrica ${metric.label} com valor ${metric.value}`}
       className="glass-panel p-6 rounded-xl flex flex-col justify-between min-h-40"
     >
       <h3 className="text-slate-400 mb-4 uppercase tracking-wide text-xs">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PortalShell } from "@/components/portal/portal-shell";
+import { getAvatarBlurDataURL } from "@/lib/avatar-placeholder";
 import { memberBySlug } from "@/lib/content";
 
 type MemberPageProps = {
@@ -22,6 +23,9 @@ export async function generateMetadata({
   return {
     title: member.name,
     description: `Perfil acadêmico de ${member.name} no portal NERDS.`,
+    alternates: {
+      canonical: `/members/${member.slug}`,
+    },
   };
 }
 
@@ -32,6 +36,7 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
   if (!member) {
     notFound();
   }
+  const blurDataURL = await getAvatarBlurDataURL(member.avatar);
 
   return (
     <PortalShell>
@@ -44,9 +49,12 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
           <div className="flex items-center gap-4">
             <Image
               src={member.avatar}
-              alt={member.name}
+              alt={`Foto de perfil de ${member.name}`}
               width={88}
               height={88}
+              sizes="88px"
+              placeholder="blur"
+              blurDataURL={blurDataURL}
               className="rounded-full border border-white/20"
             />
             <div>

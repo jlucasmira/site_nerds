@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import toast from "react-hot-toast";
 import { usePortalStore } from "@/store/portal-store";
 import { repositorySubmissionSchema } from "@/lib/validation";
 import type { RepositorySubmissionInput } from "@/lib/validation";
@@ -36,6 +37,7 @@ export function SubmitRepositoryModal() {
     if (!parsed.success) {
       setStatus("idle");
       setErrors(parsed.error.issues.map((issue) => issue.message));
+      toast.error("Revise os campos obrigatórios.");
       return;
     }
 
@@ -48,12 +50,14 @@ export function SubmitRepositoryModal() {
     if (!response.ok) {
       setStatus("idle");
       setErrors(["Não foi possível submeter no momento."]);
+      toast.error("Falha ao enviar submissão.");
       return;
     }
 
     setStatus("success");
     setErrors([]);
     setForm(initialForm);
+    toast.success("Submissão recebida com sucesso.");
   }
 
   return (
@@ -66,7 +70,12 @@ export function SubmitRepositoryModal() {
       <div className="glass-panel rounded-xl w-full max-w-xl p-6 border border-cyan-500/20">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-white text-xl font-semibold">Submit Repository</h2>
-          <button type="button" onClick={close} className="text-slate-300">
+          <button
+            type="button"
+            onClick={close}
+            className="text-slate-300"
+            aria-label="Fechar formulário de submissão"
+          >
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>

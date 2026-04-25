@@ -2,15 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PortalShell } from "@/components/portal/portal-shell";
+import { getAvatarBlurDataURL } from "@/lib/avatar-placeholder";
 import { allMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Members",
   description:
     "Perfis dos pesquisadores do NERDS, com foco em trajetória e capital humano.",
+  alternates: {
+    canonical: "/members",
+  },
 };
 
-export default function MembersPage() {
+export default async function MembersPage() {
+  const membersWithBlur = await Promise.all(
+    allMembers.map(async (member) => ({
+      ...member,
+      blurDataURL: await getAvatarBlurDataURL(member.avatar),
+    })),
+  );
+
   return (
     <PortalShell>
       <section className="max-w-5xl mx-auto space-y-6">
@@ -19,14 +30,17 @@ export default function MembersPage() {
           Conheça o time de pesquisa por trás dos projetos e publicações.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {allMembers.map((member) => (
+          {membersWithBlur.map((member) => (
             <article key={member.id} className="glass-panel rounded-xl p-5">
               <div className="flex gap-4 items-start">
                 <Image
                   src={member.avatar}
-                  alt={member.name}
+                  alt={`Foto de perfil de ${member.name}`}
                   width={72}
                   height={72}
+                  sizes="72px"
+                  placeholder="blur"
+                  blurDataURL={member.blurDataURL}
                   className="rounded-full object-cover border border-white/20"
                 />
                 <div className="space-y-2">

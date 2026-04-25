@@ -1,10 +1,21 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { SideNav } from "@/components/portal/side-nav";
-import { SubmitRepositoryModal } from "@/components/portal/submit-modal";
 import { TopBar } from "@/components/portal/top-bar";
 import { usePortalStore } from "@/store/portal-store";
+
+const SubmitRepositoryModal = dynamic(
+  () => import("@/components/portal/submit-modal").then((mod) => mod.SubmitRepositoryModal),
+  {
+    ssr: false,
+  },
+);
+
+const Toaster = dynamic(() => import("react-hot-toast").then((mod) => mod.Toaster), {
+  ssr: false,
+});
 
 type PortalShellProps = {
   children: React.ReactNode;
@@ -35,7 +46,10 @@ export function PortalShell({ children }: PortalShellProps) {
         </div>
       ) : null}
 
-      <main className="flex-1 md:ml-64 pt-24 px-4 md:px-8 pb-16">{children}</main>
+      <main id="main-content" className="flex-1 md:ml-64 pt-24 px-4 md:px-8 pb-16">
+        {children}
+      </main>
+      <Toaster position="bottom-right" />
       <SubmitRepositoryModal />
     </div>
   );

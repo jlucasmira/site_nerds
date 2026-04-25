@@ -6,6 +6,9 @@ export function TopBar() {
   const searchQuery = usePortalStore((state) => state.searchQuery);
   const setSearchQuery = usePortalStore((state) => state.setSearchQuery);
   const toggleMobileMenu = usePortalStore((state) => state.toggleMobileMenu);
+  const isMobileSearchOpen = usePortalStore((state) => state.isMobileSearchOpen);
+  const toggleMobileSearch = usePortalStore((state) => state.toggleMobileSearch);
+  const closeMobileSearch = usePortalStore((state) => state.closeMobileSearch);
   const theme = usePortalStore((state) => state.theme);
   const setTheme = usePortalStore((state) => state.setTheme);
 
@@ -27,6 +30,14 @@ export function TopBar() {
         </div>
 
         <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={toggleMobileSearch}
+            className="sm:hidden text-slate-300"
+            aria-label="Abrir busca"
+          >
+            <span className="material-symbols-outlined">search</span>
+          </button>
           <div className="relative hidden sm:block">
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
               search
@@ -52,6 +63,26 @@ export function TopBar() {
           </button>
         </div>
       </div>
+      {isMobileSearchOpen ? (
+        <div className="sm:hidden mt-3 flex items-center gap-2">
+          <input
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            className="flex-1 bg-surface-container-highest/50 border border-white/10 rounded-full py-1.5 px-4 text-sm text-white focus:outline-none focus:border-cyan-400"
+            placeholder="Buscar projetos..."
+            type="text"
+            aria-label="Buscar projetos no mobile"
+          />
+          <button
+            type="button"
+            onClick={closeMobileSearch}
+            className="text-slate-300"
+            aria-label="Fechar busca"
+          >
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      ) : null}
     </header>
   );
 }

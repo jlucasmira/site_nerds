@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nerds-portal.vercel.app/sitemap.xml

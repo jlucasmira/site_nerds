@@ -54,6 +54,32 @@ body {
   background-size: 24px 24px;
 }
 
+a {
+  text-underline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary-container);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  background: #0b0f10;
+  color: var(--secondary-container);
+  border: 1px solid var(--secondary-container);
+  border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
 .glass-panel {
   background: rgb(39 42 44 / 40%);
   backdrop-filter: blur(20px);
@@ -82,11 +108,37 @@ body {
   animation: pulse-line 2s infinite linear;
 }
 
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 7%);
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 10%),
+    transparent
+  );
+  animation: skeleton-wave 1.5s infinite;
+}
+
 @keyframes pulse-line {
   0% {
     background-position: 100% 0;
   }
   100% {
     background-position: -100% 0;
+  }
+}
+
+@keyframes skeleton-wave {
+  100% {
+    transform: translateX(100%);
   }
 }

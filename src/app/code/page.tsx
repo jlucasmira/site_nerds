@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Code Repo",
   description:
     "Galeria de repositórios GitHub dos projetos do NERDS para colaboração open source.",
+  alternates: {
+    canonical: "/code",
+  },
 };
 
 export default function CodePage() {

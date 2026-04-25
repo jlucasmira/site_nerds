@@ -62,6 +62,7 @@ export function SideNav({ mobile = false }: SideNavProps) {
         <button
           type="button"
           onClick={openSubmitModal}
+          aria-label="Abrir formulário de submissão de repositório"
           className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 font-semibold py-3 rounded-lg uppercase tracking-widest flex items-center justify-center gap-2 hover:opacity-90"
         >
           <span className="material-symbols-outlined">upload</span>
