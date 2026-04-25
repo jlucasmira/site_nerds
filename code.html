@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NERDS Portal - High-Tech Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#272a2c",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface": "#101415",
+                        "on-primary-container": "#00285c",
+                        "primary": "#adc6ff",
+                        "inverse-on-surface": "#2d3133",
+                        "on-secondary": "#00363a",
+                        "on-tertiary-container": "#1c2b39",
+                        "on-tertiary-fixed": "#0d1d2a",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-container-highest": "#323537",
+                        "secondary-fixed-dim": "#00dbe7",
+                        "surface-container": "#1d2022",
+                        "primary-container": "#4b8eff",
+                        "error": "#ffb4ab",
+                        "secondary": "#ddfcff",
+                        "surface-tint": "#adc6ff",
+                        "inverse-primary": "#005bc1",
+                        "outline-variant": "#414755",
+                        "surface-variant": "#323537",
+                        "on-primary": "#002e69",
+                        "surface-dim": "#101415",
+                        "on-tertiary": "#233240",
+                        "on-background": "#e0e3e5",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed": "#001a41",
+                        "outline": "#8b90a0",
+                        "on-secondary-fixed": "#002022",
+                        "on-secondary-container": "#006a70",
+                        "on-tertiary-fixed-variant": "#394857",
+                        "surface-container-lowest": "#0b0f10",
+                        "secondary-container": "#00f1fe",
+                        "on-surface": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "primary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed-dim": "#b8c8da",
+                        "background": "#101415",
+                        "surface-bright": "#363a3b",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#d4e4f7",
+                        "tertiary-container": "#8392a3",
+                        "surface-container-low": "#191c1e",
+                        "tertiary": "#b8c8da",
+                        "secondary-fixed": "#74f5ff",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-error-container": "#ffdad6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-xl": "64px",
+                        "stack-md": "24px",
+                        "stack-xs": "8px",
+                        "margin": "48px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Manrope"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "1", letterSpacing: "0.08em", fontWeight: "600" }],
+                        "headline-lg": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "display-xl": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(39, 42, 44, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 241, 254, 0.1);
+            background-image: linear-gradient(135deg, rgba(0, 241, 254, 0.05) 0%, rgba(0, 241, 254, 0) 100%);
+        }
+        .glow-accent {
+            box-shadow: 0 0 15px rgba(0, 241, 254, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #4b8eff, #00dbe7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .animated-pulse-line {
+            background: linear-gradient(90deg, transparent, #00f1fe, transparent);
+            background-size: 200% 100%;
+            animation: pulse-line 2s infinite linear;
+        }
+        @keyframes pulse-line {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="bg-slate-950/80 backdrop-blur-2xl text-cyan-500 font-label-sm h-screen w-64 fixed left-0 top-0 border-r border-cyan-500/20 shadow-2xl flex flex-col pt-20 hidden md:flex z-40">
+<div class="px-6 pb-6 border-b border-white/5 mb-4">
+<div class="flex items-center gap-3 mb-2">
+<img alt="NERDS Lab Logo" class="h-10 w-10 object-contain" data-alt="High-tech glowing NERDS Lab logo with cybernetic aesthetic on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKTA9ftAERL6qnO1KIdhZhgk1wbBQeH5lBouWmQunztg_Ka9bKJq2nvdZxHFwKXUA82hufSu0vJ4nVla9fRMBsrX7Xw4CxRhGcf_TVTA8mKj-gmfbHT4to4BmAb3Hj3IQoc0lN7l8SLCSxYhUTg48eNESozKKCDauWhN81IeEN7E02jn5fjSItsXJxkaBj547ehkw7fqWeyWa4nTR7VTl061YvmHEhizIvvrN7eRpZcUdx1y6Poal4rMmpy5nfUcu6GhgkwT-7HzE"/>
+<span class="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent uppercase tracking-widest font-headline-md">NERDS PORTAL</span>
+</div>
+<p class="text-slate-400 text-xs uppercase tracking-wider font-label-sm">Institutional AI Hub</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 bg-cyan-500/10 text-cyan-400 rounded-r-full py-3 px-6 border-l-4 border-cyan-400 shadow-[inset_0_0_10px_rgba(6,182,212,0.2)] group hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">science</span>
+<span>Research</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-6 hover:text-slate-200 group hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">menu_book</span>
+<span>Publications</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-6 hover:text-slate-200 group hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">terminal</span>
+<span>Code</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-6 hover:text-slate-200 group hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">groups</span>
+<span>Members</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-6 border-t border-white/5">
+<button class="w-full bg-gradient-to-r from-primary-container to-secondary-container text-surface-container-lowest font-label-sm py-3 rounded-lg shadow-[0_0_15px_rgba(0,241,254,0.2)] hover:shadow-[0_0_25px_rgba(0,241,254,0.4)] transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">upload</span>
+                Submit Repository
+            </button>
+<ul class="mt-6 space-y-2">
+<li>
+<a class="flex items-center gap-3 text-slate-500 py-2 hover:text-slate-200 text-xs" href="#">
+<span class="material-symbols-outlined text-sm">description</span>
+<span>Documentation</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-slate-500 py-2 hover:text-slate-200 text-xs" href="#">
+<span class="material-symbols-outlined text-sm">contact_support</span>
+<span>Support</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 md:ml-64 relative min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-slate-950/50 backdrop-blur-lg text-cyan-400 font-label-sm docked full-width top-0 z-50 border-b border-white/10 shadow-[0_0_15px_rgba(0,255,255,0.1)] flex justify-between items-center px-6 py-3 w-full fixed md:w-[calc(100%-16rem)]">
+<div class="flex items-center gap-4">
+<img alt="NERDS Lab Logo" class="h-8 w-8 object-contain md:hidden" data-alt="Small NERDS Lab logo icon for mobile top bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVvPUJRbijdsA-E3YEoxMf7XO8fWA5KQSDmLgvlCowDvSfkKcFLER7sg6Z8lgLt2-PcFeIrpIWTbc9AX1k1O0ACHWGaK_OYXQOJa1xvjfVchrAYqIsyJXOtIgje1c-ikxhIIkGOSnrO829zITlOqKoyP-pQdSSXhlZyWd9mCvdmn_RiQDl2pVPL18TiV6a4Fk1oYXg8FmdzpxR2jQRUs8QYMTJM28Dat-uaIFAQbmk82A3JAXZRs_ET11l0pvNLqj8Soj34EEIEAE"/>
+<span class="text-2xl font-black tracking-tighter text-white uppercase font-headline-md md:hidden">UFC NERDS</span>
+<span class="text-sm font-semibold tracking-widest text-slate-400 hidden md:inline-block">HUB_DASHBOARD // SYS.ONLINE</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-highest/50 border border-white/10 rounded-full py-1.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 w-64 transition-all" placeholder="Search Data..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-cyan-300 transition-colors duration-300 cursor-pointer active:scale-95 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-secondary-container"></span>
+</button>
+<button class="text-slate-400 hover:text-cyan-300 transition-colors duration-300 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full border border-cyan-400/50 overflow-hidden ml-2 cursor-pointer">
+<img alt="Researcher Profile Avatar" class="h-full w-full object-cover" data-alt="Portrait of a professional researcher with glasses in a futuristic lab setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnZQ1jWVTYxdhfmJn7th8mIJsBxbYd7bjDnX6sMSP5Mi5qqsDeyFuUQaen42jt76Efr7_uyQTPHguXTcORlK57RQFtJaA6paP2_ymrIKPLJDGuM9N3Y7C1PewyqDWImdx-GiZP87Po5h4sCxK-knYyPzwGLrecTrqGnjLXULvFFOa2esXHa9tigS1uZkWHdoOb9azZ5uASXod5do67ccS-sBwrhg6fCYikUjYDWfwK7l_qn3jeshCdtSTRZWCmyj-7jg7zM72VKtY"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-24 px-6 pb-24 md:p-12 md:pt-28 max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-display-xl text-display-xl text-white mb-2">Research <span class="text-gradient">Hub</span></h1>
+<p class="font-body-lg text-body-lg text-slate-400 max-w-2xl">Centralized node for computational intelligence, ongoing institutional projects, and technological extension metrics.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Metrics Overview (Span 8) -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[100px]">article</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-slate-400 mb-4 uppercase">Artigos Publicados</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-4xl text-white">142</span>
+<span class="text-secondary-container text-sm flex items-center"><span class="material-symbols-outlined text-sm">arrow_upward</span> 12%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest mt-4 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container to-secondary-container w-3/4"></div>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between relative overflow-hidden group glow-accent">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[100px]">account_tree</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-slate-400 mb-4 uppercase">Projetos em Andamento</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-4xl text-white">28</span>
+<span class="text-primary-container text-sm flex items-center"><span class="material-symbols-outlined text-sm">sync</span> Active</span>
+</div>
+<div class="flex gap-2 mt-4">
+<span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 text-[10px] rounded-full font-bold">12 AI</span>
+<span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-[10px] rounded-full font-bold">8 ROBOTICS</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[100px]">group</span>
+</div>
+<h3 class="font-label-sm text-label-sm text-slate-400 mb-4 uppercase">Pesquisadores Ativos</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-4xl text-white">64</span>
+</div>
+<div class="flex -space-x-2 mt-4">
+<img alt="Researcher" class="w-8 h-8 rounded-full border-2 border-surface object-cover" data-alt="Headshot of male researcher with beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhiu3Rem8VwXZbFG0xrefD-Vqo_fmTCmZrbRDXaj3GXcdNuuVXJBMzhKLZ07-oUHYYzTHO2Z9Ag1mLK_kQtW0tJj--WAzojESwIODpiGoOpK4dc8VKhD4TxDbDLYLINMwrflT-C4kxBQ1cwHApu2HChwX3TA1xa2wrRWJ-96MHKxlj5UaVAC099de3aSf5aZoGnpheOyZlb1sKZKEtbnU-oqQ1xs73Rdi-G_klmGYgJE3I8F5rx5nAteGgXkuSpN7heAdll0onAio"/>
+<img alt="Researcher" class="w-8 h-8 rounded-full border-2 border-surface object-cover" data-alt="Headshot of female researcher smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbBJ5FrsJKT5Q82C_Pkok7aaIsQjjTbZ4tQuQCjz2IpoMq6zK1MdS-YGl9kCXyigOY9PCE4tHyZlCU6Ao76lHo4zXOKnGu68oMXGDujyei7OtvecFDmrONnVr3Uoqcw27kt5NDEocao8ZH0V22gIZqU1quoGO_sKr73sinVbBm9RM-AltmsBS04rXPdHKoATWjFU-vPcZEkNLSZQ2aked1pYc9QjF4b8oVvFyd15yN9c_DRA-57ecdIKIQfxkR14ctILQZKfFu5jo"/>
+<img alt="Researcher" class="w-8 h-8 rounded-full border-2 border-surface object-cover" data-alt="Headshot of young male researcher" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUH6OeO-eMsk-c_FMaA1Oq5ZiHghmTz9xQIekm7c-Ls04-lBDnJuiPCxzw5DJtJ6Oj6MTL_7xxJfyEHOLx1vHUZVylgxYxEDGvh9KljUDphJDc7wbIyxwDyqUKaH2alVv4vf5-IrhZt0Xqm5hEDFqklHBK8V4MpsHE6rpn3QNFCN0lk5VhzrEUqpbKL5UPGGjhNJOF_AIDnZU9e6tIYEKh1VZtpT0894Tf0NY7F39NcLAuq28cehJovemZ4d6mpzw7an0XVxjQSU"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-xs text-slate-400">+61</div>
+</div>
+</div>
+</div>
+<!-- Interactive Data Viz (Span 4) -->
+<div class="md:col-span-4 glass-panel rounded-xl p-6 relative flex flex-col h-full min-h-[250px]">
+<h3 class="font-label-sm text-label-sm text-slate-400 mb-4 uppercase">Neural Network Status</h3>
+<div class="flex-1 flex items-center justify-center relative">
+<!-- Abstract representation of a neural network node -->
+<div class="absolute w-32 h-32 rounded-full border border-cyan-500/20 animate-pulse"></div>
+<div class="absolute w-24 h-24 rounded-full border border-cyan-500/40 animate-pulse" style="animation-delay: 0.5s;"></div>
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-container to-secondary-container glow-accent flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-surface-container-lowest">memory</span>
+</div>
+<!-- Connecting lines -->
+<div class="absolute top-1/2 left-0 w-1/2 h-px animated-pulse-line -translate-y-1/2"></div>
+<div class="absolute top-1/2 right-0 w-1/2 h-px animated-pulse-line -translate-y-1/2" style="animation-delay: 0.3s;"></div>
+<div class="absolute left-1/2 top-0 h-1/2 w-px bg-gradient-to-b from-transparent via-cyan-500 to-transparent -translate-x-1/2 opacity-30"></div>
+<div class="absolute left-1/2 bottom-0 h-1/2 w-px bg-gradient-to-b from-transparent via-cyan-500 to-transparent -translate-x-1/2 opacity-30"></div>
+</div>
+<div class="mt-4 flex justify-between text-xs text-slate-400 font-mono">
+<span>SYS: OPTIMAL</span>
+<span class="text-secondary-container">99.8% UPTIME</span>
+</div>
+</div>
+</div>
+<!-- Two Column Layout below Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Active Projects Showcase (Col 2/3) -->
+<div class="lg:col-span-2 space-y-6">
+<h2 class="font-headline-md text-headline-md text-white border-b border-white/10 pb-2">Active Projects</h2>
+<!-- Project Card 1 -->
+<div class="glass-panel p-6 rounded-xl group hover:border-cyan-500/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-white mb-1">Quantum-Neural Interface Modeling</h3>
+<p class="text-sm text-slate-400">Developing hybrid models for predictive analytics in complex systems.</p>
+</div>
+<span class="px-3 py-1 bg-secondary-container/10 text-secondary-container text-xs rounded-full border border-secondary-container/20 font-bold tracking-wider">PHASE 3</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">PyTorch</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">Qiskit</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">Data Vis</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">groups</span>
+<span class="text-sm text-slate-400">Led by Dr. Silva + 4 members</span>
+</div>
+<button class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                View Repository <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-panel p-6 rounded-xl group hover:border-cyan-500/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-white mb-1">Automated Agricultural Drones (Extensão)</h3>
+<p class="text-sm text-slate-400">Implementing computer vision for early disease detection in local crops.</p>
+</div>
+<span class="px-3 py-1 bg-primary-container/10 text-primary-container text-xs rounded-full border border-primary-container/20 font-bold tracking-wider">FIELD TEST</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">OpenCV</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">ROS</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs text-slate-300 border border-white/5">IoT</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">groups</span>
+<span class="text-sm text-slate-400">Led by Prof. Costa + 8 members</span>
+</div>
+<button class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                View Documentation <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Documentation & Timeline (Col 1/3) -->
+<div class="space-y-6">
+<!-- Documentation -->
+<div class="glass-panel p-6 rounded-xl">
+<h2 class="font-headline-md text-xl text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">folder_open</span>
+                            Resources
+                        </h2>
+<div class="space-y-3">
+<a class="block p-3 rounded-lg bg-surface-container-highest/30 border border-white/5 hover:border-cyan-500/30 hover:bg-white/5 transition-all group" href="#">
+<h4 class="text-sm text-white font-semibold mb-1 group-hover:text-cyan-400 transition-colors">Transferência de Tecnologia</h4>
+<p class="text-xs text-slate-500 mb-2">Guidelines and protocols for IP.</p>
+<div class="flex items-center text-xs text-cyan-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">download</span> Download PDF
+                                </div>
+</a>
+<a class="block p-3 rounded-lg bg-surface-container-highest/30 border border-white/5 hover:border-cyan-500/30 hover:bg-white/5 transition-all group" href="#">
+<h4 class="text-sm text-white font-semibold mb-1 group-hover:text-cyan-400 transition-colors">Repositório de Documentação</h4>
+<p class="text-xs text-slate-500 mb-2">Central archive for published papers.</p>
+<div class="flex items-center text-xs text-cyan-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span> Access Portal
+                                </div>
+</a>
+</div>
+</div>
+<!-- Timeline -->
+<div class="glass-panel p-6 rounded-xl">
+<h2 class="font-headline-md text-xl text-white mb-6">Recent Breakthroughs</h2>
+<div class="relative border-l border-cyan-500/20 ml-3 space-y-6">
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-secondary-container glow-accent"></div>
+<div class="text-xs text-cyan-400 font-mono mb-1">NOV 2023</div>
+<h4 class="text-sm text-white font-semibold">State-of-the-Art in NLP</h4>
+<p class="text-xs text-slate-400 mt-1">Published paper in IEEE achieving top accuracy in regional dialect translation.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-surface border border-cyan-500"></div>
+<div class="text-xs text-slate-500 font-mono mb-1">OCT 2023</div>
+<h4 class="text-sm text-white font-semibold">Lab Expansion</h4>
+<p class="text-xs text-slate-400 mt-1">Inaugurated new GPU cluster 'Turing' for deep learning workloads.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-surface border border-cyan-500"></div>
+<div class="text-xs text-slate-500 font-mono mb-1">SEP 2023</div>
+<h4 class="text-sm text-white font-semibold">Industry Partnership</h4>
+<p class="text-xs text-slate-400 mt-1">Signed tech-transfer agreement with regional tech hub.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

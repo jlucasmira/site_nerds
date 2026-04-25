@@ -1,0 +1,35 @@
+[
+  {
+    "id": "m-1",
+    "slug": "ana-silva",
+    "name": "Ana Silva",
+    "role": "Coordenadora de Pesquisa",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256&q=80&auto=format&fit=crop",
+    "bio": "Pesquisadora em IA aplicada, com foco em modelagem híbrida para sistemas críticos.",
+    "expertise": ["Machine Learning", "Sistemas Complexos", "MLOps"],
+    "github": "https://github.com/ana-silva",
+    "lattes": "http://lattes.cnpq.br/1234567890123456"
+  },
+  {
+    "id": "m-2",
+    "slug": "bruno-costa",
+    "name": "Bruno Costa",
+    "role": "Professor Associado",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256&q=80&auto=format&fit=crop",
+    "bio": "Coordena iniciativas de extensão tecnológica em robótica e agricultura de precisão.",
+    "expertise": ["Robótica", "Visão Computacional", "Sistemas Embarcados"],
+    "github": "https://github.com/brunocosta",
+    "lattes": "http://lattes.cnpq.br/2345678901234567"
+  },
+  {
+    "id": "m-3",
+    "slug": "carla-almeida",
+    "name": "Carla Almeida",
+    "role": "Pesquisadora Sênior",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=256&q=80&auto=format&fit=crop",
+    "bio": "Atua com NLP acadêmico e estratégias de publicação internacional.",
+    "expertise": ["NLP", "Linguística Computacional", "Ciência Aberta"],
+    "github": "https://github.com/carlaalmeida",
+    "lattes": "http://lattes.cnpq.br/3456789012345678"
+  }
+]

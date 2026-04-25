@@ -1,0 +1,38 @@
+[
+  {
+    "id": "quantum-neural",
+    "title": "Quantum-Neural Interface Modeling",
+    "summary": "Developing hybrid models for predictive analytics in complex systems.",
+    "status": "PHASE_3",
+    "techStack": ["PyTorch", "Qiskit", "Data Vis"],
+    "leader": "Dr. Silva",
+    "memberCount": 5,
+    "repoUrl": "https://github.com/nerds-lab/quantum-neural",
+    "documentationUrl": "https://github.com/nerds-lab/quantum-neural/wiki",
+    "tags": ["AI", "Quantum"]
+  },
+  {
+    "id": "agri-drones",
+    "title": "Automated Agricultural Drones",
+    "summary": "Computer vision for early disease detection in local crops.",
+    "status": "FIELD_TEST",
+    "techStack": ["OpenCV", "ROS", "IoT"],
+    "leader": "Prof. Costa",
+    "memberCount": 9,
+    "repoUrl": "https://github.com/nerds-lab/agri-drones",
+    "documentationUrl": "https://docs.nerds.ufc.br/agri-drones",
+    "tags": ["Robotics", "Extension"]
+  },
+  {
+    "id": "dialect-nlp",
+    "title": "Regional Dialect Translation",
+    "summary": "NLP models for robust translation of regional language variants.",
+    "status": "PHASE_2",
+    "techStack": ["Transformers", "Python", "FastAPI"],
+    "leader": "Dra. Almeida",
+    "memberCount": 6,
+    "repoUrl": "https://github.com/nerds-lab/dialect-nlp",
+    "documentationUrl": "https://docs.nerds.ufc.br/dialect-nlp",
+    "tags": ["NLP", "Academic"]
+  }
+]

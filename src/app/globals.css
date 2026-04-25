@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #101415;
+  --foreground: #e0e3e5;
+  --surface: #101415;
+  --surface-container: #1d2022;
+  --surface-container-high: #272a2c;
+  --surface-container-highest: #323537;
+  --primary-container: #4b8eff;
+  --secondary-container: #00f1fe;
+  --outline: #8b90a0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-primary-container: var(--primary-container);
+  --color-secondary-container: var(--secondary-container);
+  --color-outline: var(--outline);
+  --font-sans: var(--font-manrope);
+  --spacing-stack-xl: 64px;
+  --spacing-stack-md: 24px;
+  --spacing-stack-xs: 8px;
+  --radius-glass: 0.75rem;
+  --text-display-xl: 4rem;
+  --text-headline-md: 2rem;
+  --text-label-sm: 0.75rem;
+}
+
+.light {
+  --background: #f2f7ff;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-container: #e6edf7;
+  --surface-container-high: #dce6f2;
+  --surface-container-highest: #cedbea;
+  --primary-container: #005bc1;
+  --secondary-container: #006a70;
+  --outline: #64748b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 2%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 2%) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass-panel {
+  background: rgb(39 42 44 / 40%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(0 241 254 / 10%);
+  background-image: linear-gradient(
+    135deg,
+    rgb(0 241 254 / 5%) 0%,
+    rgb(0 241 254 / 0%) 100%
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #4b8eff, #00dbe7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-accent {
+  box-shadow: 0 0 15px rgb(0 241 254 / 20%);
+}
+
+.animated-pulse-line {
+  background: linear-gradient(90deg, transparent, #00f1fe, transparent);
+  background-size: 200% 100%;
+  animation: pulse-line 2s infinite linear;
+}
+
+@keyframes pulse-line {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

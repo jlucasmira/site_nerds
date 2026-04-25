@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p-1",
+    "title": "State-of-the-Art in NLP for Regional Dialects",
+    "authorIds": ["m-1", "m-3"],
+    "venue": "IEEE Transactions on AI",
+    "year": 2023,
+    "pdfUrl": "https://arxiv.org/pdf/1706.03762",
+    "keywords": ["NLP", "Translation", "Dialect"]
+  },
+  {
+    "id": "p-2",
+    "title": "Real-time Crop Disease Detection with UAV Vision",
+    "authorIds": ["m-2"],
+    "venue": "Journal of Field Robotics",
+    "year": 2024,
+    "pdfUrl": "https://arxiv.org/pdf/1512.03385",
+    "keywords": ["Computer Vision", "Drones", "Agritech"]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "published-articles",
+    "label": "Artigos Publicados",
+    "value": 142,
+    "trend": "+12%",
+    "progress": 75
+  },
+  {
+    "id": "active-projects",
+    "label": "Projetos em Andamento",
+    "value": 28,
+    "trend": "Active",
+    "progress": 64
+  },
+  {
+    "id": "active-members",
+    "label": "Pesquisadores Ativos",
+    "value": 64,
+    "progress": 89
+  },
+  {
+    "id": "uptime",
+    "label": "System Uptime",
+    "value": "99.8%",
+    "trend": "SYS: OPTIMAL"
+  }
+]
