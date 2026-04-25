@@ -23,7 +23,7 @@ export function SideNav({ mobile = false }: SideNavProps) {
 
   return (
     <nav
-      className={`${mobile ? "w-full" : "hidden w-64 md:flex"} bg-slate-950/80 text-cyan-500 border-r border-cyan-500/20 h-full flex-col pt-16`}
+      className={`${mobile ? "w-full" : "hidden w-64 md:flex"} bg-slate-950/80 text-cyan-500 border-r border-cyan-500/20 h-full flex-col pt-12 md:pt-12`}
       aria-label="Navegação principal"
     >
       <div className="px-4 md:px-6 pb-6 border-b border-white/5 mb-4">

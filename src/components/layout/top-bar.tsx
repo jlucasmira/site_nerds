@@ -13,8 +13,8 @@ export function TopBar() {
   const setTheme = usePortalStore((state) => state.setTheme);
 
   return (
-    <header className="bg-slate-950/50 backdrop-blur-lg border-b border-white/10 px-4 md:px-6 py-3 fixed top-0 right-0 left-0 md:left-64 z-40">
-      <div className="flex justify-between items-center gap-4">
+    <header className="bg-slate-950/50 backdrop-blur-lg border-b border-white/10 px-4 md:px-6 py-3 fixed top-0 right-0 left-0 md:left-64 z-40 h-12 md:h-12">
+      <div className="flex justify-between items-center h-full gap-4">
         <div className="flex items-center gap-4">
           <button
             type="button"
