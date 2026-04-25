@@ -195,11 +195,11 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Image
-              src="/assets/brand/Nerds.png"
+              src="/logo-nerds.png"
               alt="NERDS"
-              width={100}
-              height={28}
-              className="h-7 w-auto md:h-8 drop-shadow-[0_0_8px_rgba(0,241,254,0.4)]"
+              width={140}
+              height={56}
+              className="w-auto h-16 drop-shadow-[0_0_10px_#00F1FE]"
               priority
             />
           </div>

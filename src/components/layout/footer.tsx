@@ -9,7 +9,7 @@ export function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Image
-            src="/assets/brand/Nerds.png"
+            src="/logo-nerds.png"
             alt="NERDS"
             width={80}
             height={22}

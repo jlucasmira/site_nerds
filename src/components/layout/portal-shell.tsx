@@ -47,7 +47,7 @@ export function PortalShell({ children }: PortalShellProps) {
         </div>
       ) : null}
 
-      <main id="main-content" className="flex-1 md:ml-64 pt-12 md:pt-12 px-4 md:px-8 pb-16">
+      <main id="main-content" className="flex-1 md:ml-64 pt-12 px-4 md:px-8 pb-16">
         {children}
       </main>
       <Footer />

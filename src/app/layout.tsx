@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     "open source",
   ],
   icons: {
-    icon: "/assets/brand/Nerds.png",
-    apple: "/assets/brand/Nerds.png",
+    icon: "/logo-nerds.png",
+    apple: "/logo-nerds.png",
   },
   openGraph: {
     title: "NERDS Portal",
