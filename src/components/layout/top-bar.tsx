@@ -25,7 +25,7 @@ export function TopBar() {
             <span className="material-symbols-outlined">menu</span>
           </button>
           <span className="text-sm font-semibold tracking-widest text-slate-400 hidden md:inline-block">
-            HUB_DASHBOARD // SYS.ONLINE
+            HUB_Dashboard // SYS.ONLINE
           </span>
         </div>
 

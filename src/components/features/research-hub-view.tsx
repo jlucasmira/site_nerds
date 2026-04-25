@@ -1,7 +1,7 @@
 "use client";
 
-import { MetricCard } from "@/components/portal/metric-card";
-import { ProjectCard } from "@/components/portal/project-card";
+import { MetricCard } from "@/components/features/metric-card";
+import { ProjectCard } from "@/components/features/project-card";
 import { allMetrics, filterProjects } from "@/lib/content";
 import { usePortalStore } from "@/store/portal-store";
 

@@ -27,7 +27,7 @@ export function SideNav({ mobile = false }: SideNavProps) {
     >
       <div className="px-6 pb-6 border-b border-white/5 mb-4">
         <div className="text-xl font-bold uppercase tracking-widest text-gradient">
-          NERDS PORTAL
+          NERDS Portal
         </div>
         <p className="text-slate-400 text-xs uppercase tracking-wider mt-2">
           Institutional AI Hub

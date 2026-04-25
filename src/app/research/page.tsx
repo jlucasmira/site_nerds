@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { LoadingSkeleton } from "@/components/portal/loading-skeleton";
-import { PortalShell } from "@/components/portal/portal-shell";
+import { LoadingSkeleton } from "@/components/ui/loading-skeleton";
+import { PortalShell } from "@/components/layout/portal-shell";
 
 const ResearchHubView = dynamic(
-  () => import("@/components/portal/research-hub-view").then((mod) => mod.ResearchHubView),
+  () => import("@/components/features/research-hub-view").then((mod) => mod.ResearchHubView),
   { loading: () => <LoadingSkeleton /> },
 );
 

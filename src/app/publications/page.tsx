@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { LoadingSkeleton } from "@/components/portal/loading-skeleton";
-import { PortalShell } from "@/components/portal/portal-shell";
+import { LoadingSkeleton } from "@/components/ui/loading-skeleton";
+import { PortalShell } from "@/components/layout/portal-shell";
 
 const PublicationsView = dynamic(
-  () => import("@/components/portal/publications-view").then((mod) => mod.PublicationsView),
+  () => import("@/components/features/publications-view").then((mod) => mod.PublicationsView),
   { loading: () => <LoadingSkeleton /> },
 );
 

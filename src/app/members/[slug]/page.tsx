@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { PortalShell } from "@/components/portal/portal-shell";
+import { PortalShell } from "@/components/layout/portal-shell";
 import { getAvatarBlurDataURL } from "@/lib/avatar-placeholder";
 import { memberBySlug } from "@/lib/content";
 

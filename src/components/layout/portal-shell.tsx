@@ -2,12 +2,12 @@
 
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
-import { SideNav } from "@/components/portal/side-nav";
-import { TopBar } from "@/components/portal/top-bar";
+import { SideNav } from "@/components/layout/side-nav";
+import { TopBar } from "@/components/layout/top-bar";
 import { usePortalStore } from "@/store/portal-store";
 
 const SubmitRepositoryModal = dynamic(
-  () => import("@/components/portal/submit-modal").then((mod) => mod.SubmitRepositoryModal),
+  () => import("@/components/features/submit-repository-modal").then((mod) => mod.SubmitRepositoryModal),
   {
     ssr: false,
   },

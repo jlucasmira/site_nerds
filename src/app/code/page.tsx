@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PortalShell } from "@/components/portal/portal-shell";
+import { PortalShell } from "@/components/layout/portal-shell";
 import { allProjects } from "@/lib/content";
 
 export const metadata: Metadata = {

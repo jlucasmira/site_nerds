@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PortalShell } from "@/components/portal/portal-shell";
+import { PortalShell } from "@/components/layout/portal-shell";
 import { getAvatarBlurDataURL } from "@/lib/avatar-placeholder";
 import { allMembers } from "@/lib/content";
 

@@ -19,11 +19,11 @@ export function SubmitRepositoryModal() {
   const close = usePortalStore((state) => state.closeSubmitModal);
   const [form, setForm] = useState<RepositorySubmissionInput>(initialForm);
   const [errors, setErrors] = useState<string[]>([]);
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
   const isDisabled = useMemo(
-    () => Object.values(form).some((value) => value.trim().length === 0),
-    [form],
+    () => status === "loading" || Object.values(form).some((value) => value.trim().length === 0),
+    [form, status],
   );
 
   if (!isOpen) {
@@ -32,6 +32,9 @@ export function SubmitRepositoryModal() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("loading");
+    setErrors([]);
+
     const parsed = repositorySubmissionSchema.safeParse(form);
 
     if (!parsed.success) {
@@ -47,6 +50,13 @@ export function SubmitRepositoryModal() {
       body: JSON.stringify(parsed.data),
     });
 
+    if (response.status === 429) {
+      setStatus("idle");
+      setErrors(["Too many requests. Try again later."]);
+      toast.error("Muitas requisições. Aguarde um momento antes de tentar novamente.");
+      return;
+    }
+
     if (!response.ok) {
       setStatus("idle");
       setErrors(["Não foi possível submeter no momento."]);
@@ -58,6 +68,10 @@ export function SubmitRepositoryModal() {
     setErrors([]);
     setForm(initialForm);
     toast.success("Submissão recebida com sucesso.");
+    setTimeout(() => {
+      close();
+      setStatus("idle");
+    }, 1500);
   }
 
   return (
@@ -73,7 +87,8 @@ export function SubmitRepositoryModal() {
           <button
             type="button"
             onClick={close}
-            className="text-slate-300"
+            disabled={status === "loading"}
+            className="text-slate-300 disabled:opacity-50"
             aria-label="Fechar formulário de submissão"
           >
             <span className="material-symbols-outlined">close</span>
@@ -86,6 +101,7 @@ export function SubmitRepositoryModal() {
             placeholder="Título do projeto"
             value={form.title}
             onChange={(event) => setForm({ ...form, title: event.target.value })}
+            disabled={status === "loading"}
           />
           <input
             className="w-full rounded-lg bg-slate-900/70 border border-slate-700 p-2"
@@ -94,6 +110,7 @@ export function SubmitRepositoryModal() {
             onChange={(event) =>
               setForm({ ...form, repositoryUrl: event.target.value })
             }
+            disabled={status === "loading"}
           />
           <textarea
             className="w-full rounded-lg bg-slate-900/70 border border-slate-700 p-2"
@@ -103,18 +120,21 @@ export function SubmitRepositoryModal() {
             onChange={(event) =>
               setForm({ ...form, summary: event.target.value })
             }
+            disabled={status === "loading"}
           />
           <input
             className="w-full rounded-lg bg-slate-900/70 border border-slate-700 p-2"
             placeholder="Stack tecnológica"
             value={form.stack}
             onChange={(event) => setForm({ ...form, stack: event.target.value })}
+            disabled={status === "loading"}
           />
           <input
             className="w-full rounded-lg bg-slate-900/70 border border-slate-700 p-2"
             placeholder="Responsável"
             value={form.owner}
             onChange={(event) => setForm({ ...form, owner: event.target.value })}
+            disabled={status === "loading"}
           />
 
           {errors.length > 0 ? (
@@ -133,9 +153,16 @@ export function SubmitRepositoryModal() {
           <button
             type="submit"
             disabled={isDisabled}
-            className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 font-semibold py-2 rounded-lg disabled:opacity-60"
+            className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 font-semibold py-2 rounded-lg disabled:opacity-60 flex items-center justify-center gap-2"
           >
-            Enviar
+            {status === "loading" ? (
+              <>
+                <span className="material-symbols-outlined animate-spin">sync</span>
+                Enviando...
+              </>
+            ) : (
+              "Enviar"
+            )}
           </button>
         </form>
       </div>
